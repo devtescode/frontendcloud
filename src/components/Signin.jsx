@@ -30,7 +30,7 @@ const Signin = () => {
         onSubmit: values => {
             setLoading(true);
             let successMessage, errorMessage;
-            axios.post("https://cloudbackend-7p7e.onrender.com/getsignin", { uname: values.username, pass: values.password })
+            axios.post("https://cloudbackend-7p7e.onrender.com/cloud/getsignin", { uname: values.username, pass: values.password })
                 .then((res) => {
                     successMessage = res.data.message;
                     errorMessage = res.data.message;
