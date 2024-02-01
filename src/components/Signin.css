@@ -1,0 +1,15 @@
+.userimg{
+    background-image: url(../assets/4032143-200.webp);
+    background-position: center;
+    background-size: cover;
+}
+.passimg{
+    background-image: url(../assets/black-mix-icon-password-manager-cybersecurity-online-security-antivirus-logo-157623384.webp);
+    background-position: center;
+    background-size: cover;
+}
+.styleregister{
+    cursor: pointer;
+}
+
+

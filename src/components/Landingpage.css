@@ -1,0 +1,141 @@
+.custom-shape-divider-bottom-1705566695 {
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    background-color: cadetblue;
+}
+
+.custom-shape-divider-bottom-1705566695 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 500px;
+}
+
+.custom-shape-divider-bottom-1705566695 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.Navbarstyleone {
+    justify-content: space-around !important;
+}
+
+li {
+    text-align: center !important;
+}
+
+.CauseCaptureStyle {
+    border: 2px solid cadetblue;
+    padding: 5px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgb(0, 247, 255), rgb(18, 19, 19));
+    color: white;
+}
+
+.Causecapstyleword {
+    padding: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 450px;
+    align-items: center !important;
+    z-index: 100 !important;
+}
+
+.CauseCaptureh1style {
+    width: 30%;
+}
+
+.myImgCaptureStyle {
+    border: 2px solid cadetblue;
+    width: 40%;
+    height: 450px;
+    border-radius: 200px;
+    margin-top: 100px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    /* margin: auto !important; */
+}
+
+.myImgCaptureStyle2 {
+    width: 100%;
+    border-radius: 200px;
+    height: 450px;
+    border: 2px solid cadetblue;
+
+}
+
+.h1capstyling {
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.ptagCapstyle {
+    text-align: justify;
+}
+
+.AboutDiv {
+    /* font-size: 20px; */
+    background-color: cadetblue;
+    margin-top: 50px;
+    padding: 20px;
+    color: white;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    justify-content: space-around !important;
+}
+
+.aboutDivStyle{
+    width: 45%;
+}
+
+@media (max-width:688px) {
+    .aboutDivStyle{
+        width: 100%;
+    }
+    .AboutDiv {
+        font-size: 20px;
+        background-color: cadetblue;
+        margin-top: 300px;
+        padding: 10px;
+        display: block;
+    }
+
+    .Causecapstyleword {
+        display: block;
+        width: 100%;
+        height: 450px;
+        padding: 5px;
+        margin-top: 20px;
+    }
+
+    .myImgCaptureStyle {
+        width: 100%;
+        height: 400px;
+        border-radius: 200px;
+        margin-top: 100px;
+        padding: 0px;
+        background-color: #FFFFFF;
+        /* margin: auto !important; */
+    }
+
+    .myImgCaptureStyle2 {
+        width: 100%;
+        border-radius: 200px;
+        height: 400px;
+        border: 2px solid cadetblue;
+
+    }
+
+    .CauseCaptureh1style {
+        width: 100%;
+    }
+
+}
