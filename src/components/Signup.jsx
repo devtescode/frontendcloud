@@ -35,7 +35,8 @@ const Signup = () => {
         onSubmit: values => {
             setLoading(true);
             let successMessage, errorMessage;
-            axios.post("http://localhost:3500/cloud/getsignup", { uname: values.username, fname: values.firstname, lname: values.lastname, pass: values.password, myimage: "" })
+            // http://localhost:3500/cloud/getsignup
+            axios.post("https://cloudbackend-7p7e.onrender.com/cloud/getsignup", { uname: values.username, fname: values.firstname, lname: values.lastname, pass: values.password, myimage: "" })
                 .then((res) => {
                     successMessage = res.data.message;
                     errorMessage = res.data.message;
