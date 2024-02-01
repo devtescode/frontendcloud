@@ -32,12 +32,11 @@ const Signin = () => {
             let successMessage, errorMessage;
             axios.post("https://cloudbackend-7p7e.onrender.com/cloud/getsignin", { uname: values.username, pass: values.password })
                 .then((res) => {
-                    successMessage = res.data.message;
-                    errorMessage = res.data.message;
+                    alert('hello world')
                     // toast(res.data.message)
                     // setTimeout(() => {
-                        toast(res.data.status ? "success" : successMessage)
-                        if (res.data.status == true) {
+                        toast(res.data.status ? "success" : res.data.message)
+                        if (res.data.status) {
                             // setTimeout(() => {
                                 localStorage.token = res.data.token
                                 navigate("/dashboard")
@@ -50,8 +49,8 @@ const Signin = () => {
                     // }, 6000);
                 })
                 .catch((err) => {
-                    console.log(res.data.message);
-                    alert(res.data.message)
+                    // console.log(res.data.message);
+                    alert(err.message)
                 })
             setTimeout(() => {
                 setLoading(false);
