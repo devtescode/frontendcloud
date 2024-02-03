@@ -100,7 +100,7 @@ const Dashboard = () => {
         updatedImage.pop();
         setimage(updatedImage);  
         const lastImage = prev[prev.length - 1];
-        axios.delete(`https://cloudbackend-7p7e.onrender.com/cloud/deleteImage${lastImage._id}`)
+        axios.delete(`http://localhost:3500/cloud/deleteImage/${lastImage._id}`)
           .then((response) => {
             if (response.data.success) {
               swal("Delete", "Image deleted successfully.", "success");
@@ -108,8 +108,8 @@ const Dashboard = () => {
               swal("Error", "Failed to delete the image.", "error");
             }
           })
-          .catch((error) => {
-            console.error(error);
+          .catch((err) => {
+            console.error(err);
             swal("Error", "Failed to delete the image. Please try again later.", "error");
           });
         return updatedImage;
