@@ -100,7 +100,7 @@ const Dashboard = () => {
         updatedImage.pop();
         setimage(updatedImage);  
         const lastImage = prev[prev.length - 1];
-        axios.delete(`http://localhost:3500/cloud/deleteImage/${lastImage._id}`)
+        axios.delete(`https://cloudbackend-7p7e.onrender.com/cloud/deleteImage/${lastImage._id}`)
           .then((response) => {
             if (response.data.success) {
               swal("Delete", "Image deleted successfully.", "success");
