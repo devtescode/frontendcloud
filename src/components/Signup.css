@@ -1,23 +1,66 @@
-.userimg{
-    background-image: url(../assets/4032143-200.webp);
-    background-position: center;
-    background-size: cover;
-}
-.firstimg{
-    background-image: url(../assets/attachment_82640314.webp);
-    background-position: center;
-    background-size: cover;
-}
-.lastimg{
-    background-image: url(../assets/l-letter-logo-in-a-circle-impossible-line-style.webp);
-    background-position: center;
-    background-size: cover;
-}
-.passimg{
-    background-image: url(../assets/black-mix-icon-password-manager-cybersecurity-online-security-antivirus-logo-157623384.webp);
-    background-position: center;
-    background-size: cover;
-}
+
 .signinstyle{
     cursor: pointer;
+}
+.signupcontainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center !important;
+    /* border: 2px solid; */
+    height: 100vh;
+    width: 90%;
+    margin: auto !important;
+    padding: 50px;
+}
+.signuprow{
+    background-color: #5F9EA0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.signuprow, .signuprow2{
+    width: 50%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    border: 2px solid cadetblue;
+}
+.signuprow2{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+@media (max-width:688px) {
+    .signupcontainer{
+        display: block;
+        justify-content: space-around;
+        align-items: center !important;
+        height: 100vh;
+        width: 100%;
+        margin: auto !important;
+        padding: 0px;
+    }
+    .signuprow{
+        display: none !important;
+    }
+    .signuprow2{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center !important;
+        border: 2px solid cadetblue;
+    }
+}
+
+.signuprowinner2{
+    height: 90vh;
+    width: 100%;
+}
+
+.signuprowimg, .signuprowimg2{
+    border-radius: 40vh;
+    width: 90% !important;
+    justify-content: center !important;
+    margin: auto !important;
+    text-align: center !important;
+    display: flex;
 }

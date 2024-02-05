@@ -7,6 +7,7 @@ import { useFormik } from 'formik'
 import * as Yup from "yup"
 import axios from 'axios'
 import Loader from './Loader'
+import signupimg from '../assets/signuplogo.jpg'
 const Signin = () => {
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false);
@@ -60,36 +61,36 @@ const Signin = () => {
         <>
             {loading && <Loader />}
             <form action="" onSubmit={formik.handleSubmit}>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-md-6 col-sm-12 shadow mx-auto border border-2 rounded-3 mt-2'>
+                <div className='signupcontainer'>
+                    <div className=' signuprow'>
+                        <div className='signuprowimg'>
+                            <img src={signupimg} className='signuprowimg2' alt="" />
+                        </div>
+                    </div>
+                    <div className='shadow-lg p-4 signuprow2'>
+                        <div className='signinrowinner2'>
                             <div className='p-2 text-success text-center'>
                                 <h4 className='mx-auto w-50 border-2 border-bottom p-3'>Login</h4>
                             </div>
-                            <div className='border border-2 p-2 d-flex my-3 shadow-lg'>
-                                <div className='border border-2 rounded-2 d-flex fw-bold text-secondary p-1 userimg' style={{ alignItems: "center" }}>
-                                    username
-                                </div>
-                                <div className='w-100' >
-                                    <input type="text" name="username" value={formik.values.username} onChange={formik.handleChange} className='form-control my-3 p-3' placeholder='Username' />
-                                </div>
-                            </div>
-                            <div className='text-end text-danger'>
-                                {formik.errors.username}
+
+                            <div className='w-100' >
+                                <input
+                                    type="text"
+                                    name="username"
+                                    value={formik.values.username}
+                                    onChange={formik.handleChange}
+                                    className={`form-control my-4 p-3 ${formik.values.username && !formik.errors.username ? 'is-valid' : (formik.errors.username ? 'is-invalid' : '')}`}
+                                    placeholder='Username'
+                                />
                             </div>
 
-                            <div className='border border-2 p-2 d-flex my-3 shadow-lg'>
-                                <div className='border border-2 rounded-2 d-flex fw-bold text-secondary p-1 passimg' style={{ alignItems: "center" }}>
-                                    Password
-                                </div>
-                                <div className='w-100'>
-                                    <input type="text" name='password' value={formik.values.password} onChange={formik.handleChange} className='form-control my-3 p-3' placeholder='Password' />
-                                </div>
+                            <div className='w-100'>
+                                <input type="text" name='password' value={formik.values.password} onChange={formik.handleChange}
+                                     className={`form-control my-4 p-3 ${formik.values.password && !formik.errors.password ? 'is-valid' : (formik.errors.password ? 'is-invalid' : '')}`}
+                                    placeholder='Password' />
                             </div>
-                            <div className='text-end text-danger'>
-                                {formik.errors.password}
-                            </div>
-                            <div className='my-3 text-center'>
+                           
+                            <div className='my-2 text-center'>
                                 <button className='btn btn-dark' type='submit'>Login</button>
                             </div>
                             <div className='text-dark fw-bold d-flex'>
@@ -101,9 +102,11 @@ const Signin = () => {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </form>
+                           
         </>
     )
 }
