@@ -44,19 +44,29 @@
         height: 100vh;
     }
     .imagestyle{
-        position: absolute;
+        /* position: absolute; */
         margin-top: 30px !important;
         border: 3px solid;
-        height: 80%;
-        width: 95%;
+        height: 80vh;
+        width: 100%;
         border-radius: 10px;
-        margin: auto !important;
-        display: block;
+        /* margin: auto !important; */
         justify-content: center;
         background-image: url(../assets/imgupload.jpg);
         background-size: cover;
         background-position: center;
     }
+    /* .imagestyle{
+        text-align: center;
+        height: 500px;
+        width: 100%;
+        border-radius: 10px;
+        margin: auto !important;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+       
+    } */
     /* .imagewidth{
         position: absolute;
         width: 100%;
