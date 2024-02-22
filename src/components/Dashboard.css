@@ -3,11 +3,11 @@
     width: 50%;
     border-radius: 10px;
     margin: auto;
-    height: 600px;
+    height: 100vh;
     padding: 10px;
-    position: relative; 
+    /* position: relative;  */
     display: flex !important; 
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 .imaageuploadstyle{
     position: absolute;
@@ -44,7 +44,6 @@
         margin-top: 0px;
         position: absolute;
         height: 95%;
-        margin-top: 5%;
     }
     .imagestyle{
         position: absolute;

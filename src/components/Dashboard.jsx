@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "./Dashboard.css"
+import Loader from './Loader';
 const Dashboard = () => {
   const [file, setfile] = useState("");
   const [image, setimage] = useState([]);
+  const [loading, setLoading] = useState(false);
   let token = localStorage.token
   const [user, setuser] = useState({});
   const url = "https://cloudbackend-7p7e.onrender.com/cloud/getdashboard"
@@ -43,11 +45,11 @@ const Dashboard = () => {
     if (!file) {
       // alert("please select a file before uploading")
       swal("Upload", "You are allow to select a file before uploading", "warning");
-
     }
     else {
       const userData = { file,token };
       console.log(userData);
+      setLoading(true);
       axios.post(url, userData)
         .then((response) => {
           swal("", response.data.message, "warning");
@@ -55,6 +57,7 @@ const Dashboard = () => {
             setimage((prev) => [...prev, response.data.image]);
             swal("Good job!", response.data.message, "success");
             setfile("");
+
           }
         })
         .catch((err) => {
@@ -62,6 +65,9 @@ const Dashboard = () => {
           // alert(response.data.message)
           // swal("", response.data.message, "error");
         })
+        setTimeout(() => {
+          setLoading(false);
+      }, 8000);
     }
   };
 
@@ -119,6 +125,7 @@ const Dashboard = () => {
 
   return (
     <>
+      {loading && <Loader/>}
       <div className="containerdiv shadow-lg">
         {/* <p>{user.uname}</p> */}
         <div className="imagestyle">
