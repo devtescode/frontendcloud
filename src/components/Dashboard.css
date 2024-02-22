@@ -41,9 +41,7 @@
 @media (max-width:688px) {
     .containerdiv{
         width: 100%;
-        margin-top: 0px;
-        position: absolute;
-        height: 95%;
+        height: 100vh;
     }
     .imagestyle{
         position: absolute;
