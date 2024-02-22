@@ -137,7 +137,7 @@ const Dashboard = () => {
         </div>
         <div className="imaageuploadstyle">
           <input type="file" onChange={(e) => getfile(e)} />
-          <div className="mx-3 mt-3 mt-sm-0">
+          <div className="mt-3 mt-sm-0">
             <button className="btn btn-dark" onClick={myupload}>
               Upload
             </button>
