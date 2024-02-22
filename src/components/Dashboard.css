@@ -77,9 +77,9 @@
     } */
     .imaageuploadstyle{
         position: absolute;
-        bottom: 10px;
+        bottom: 0px !important;
         display: block;
-        padding: 5px;
+        padding: 4px;
     }
 }
 
