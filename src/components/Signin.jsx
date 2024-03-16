@@ -30,12 +30,12 @@ const Signin = () => {
         }),
         onSubmit: values => {
             setLoading(true);
-            let successMessage, errorMessage;
+            // let successMessage, errorMessage;
             axios.post("https://cloudbackend-7p7e.onrender.com/cloud/getsignin", { uname: values.username, pass: values.password })
                 .then((res) => {
                     // toast(res.data.message)
                     // setTimeout(() => {
-                        toast(res.data.status ? "success" : res.data.message)
+                        toast(res.data.status ? res.data.message: res.data.message)
                         if (res.data.status) {
                             // setTimeout(() => {
                                 localStorage.token = res.data.token
@@ -50,7 +50,7 @@ const Signin = () => {
                 })
                 .catch((err) => {
                     // console.log(res.data.message);
-                    alert(err.message)
+                    toast(err.message)
                 })
             setTimeout(() => {
                 setLoading(false);
@@ -74,20 +74,41 @@ const Signin = () => {
                             </div>
 
                             <div className='w-100' >
-                                <input
-                                    type="text"
+                            <input
+                                    // className={`form-control my-4 p-3 ${formik.values.username && !formik.errors.username ? 'is-valid' : (formik.errors.username ? 'is-invalid' : '')}`}
+                                    // 
+
+                                    className={`form-control w-100 my-4 p-3 ${(formik.values.username && !formik.errors.username) ||
+                                        (formik.touched.username && formik.values.username && formik.errors.username && formik.touched.username && formik.values.username)
+                                        ? 'is-valid'
+                                        : formik.values.username || formik.touched.username
+                                            ? 'is-invalid'
+                                            : ''
+                                        }`}
+
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
                                     name="username"
                                     value={formik.values.username}
-                                    onChange={formik.handleChange}
-                                    className={`form-control my-4 p-3 ${formik.values.username && !formik.errors.username ? 'is-valid' : (formik.errors.username ? 'is-invalid' : '')}`}
-                                    placeholder='Username'
+                                    placeholder="Username"
                                 />
                             </div>
 
                             <div className='w-100'>
-                                <input type="text" name='password' value={formik.values.password} onChange={formik.handleChange}
-                                     className={`form-control my-4 p-3 ${formik.values.password && !formik.errors.password ? 'is-valid' : (formik.errors.password ? 'is-invalid' : '')}`}
-                                    placeholder='Password' />
+                            <input type="text"
+                                    className={`form-control w-100 my-4 p-3 ${(formik.values.password && !formik.errors.password) ||
+                                        (formik.touched.password && formik.values.password && formik.errors.password && formik.touched.password && formik.values.password)
+                                        ? 'is-valid'
+                                        : formik.values.password || formik.touched.password
+                                            ? 'is-invalid'
+                                            : ''
+                                        }`}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    name="password"
+                                    value={formik.values.password}
+                                    placeholder="Password"
+                                />
                             </div>
                            
                             <div className='my-2 text-center'>

@@ -79,21 +79,42 @@ const Signup = () => {
 
                             <div className='w-100' >
                                 <input
-                                    type="text"
+                                    // className={`form-control my-4 p-3 ${formik.values.username && !formik.errors.username ? 'is-valid' : (formik.errors.username ? 'is-invalid' : '')}`}
+                                    // 
+
+                                    className={`form-control w-100 my-4 p-3 ${(formik.values.username && !formik.errors.username) ||
+                                        (formik.touched.username && formik.values.username && formik.errors.username && formik.touched.username && formik.values.username)
+                                        ? 'is-valid'
+                                        : formik.values.username || formik.touched.username
+                                            ? 'is-invalid'
+                                            : ''
+                                        }`}
+
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
                                     name="username"
                                     value={formik.values.username}
-                                    onChange={formik.handleChange}
-                                    className={`form-control my-4 p-3 ${formik.values.username && !formik.errors.username ? 'is-valid' : (formik.errors.username ? 'is-invalid' : '')}`}
-                                    placeholder='Username'
+                                    placeholder="Username"
                                 />
                             </div>
 
 
 
                             <div className='w-100'>
-                                <input type="text" name='firstname' value={formik.values.firstname} onChange={formik.handleChange}
-                                   className={`form-control my-4 p-3 ${formik.values.firstname && !formik.errors.firstname ? 'is-valid' : (formik.errors.firstname ? 'is-invalid' : '')}`}
-                                    placeholder='Firstname' />
+                                <input type="text"
+                                    className={`form-control w-100 my-4 p-3 ${(formik.values.firstname && !formik.errors.firstname) ||
+                                        (formik.touched.firstname && formik.values.firstname && formik.errors.firstname && formik.touched.firstname && formik.values.firstname)
+                                        ? 'is-valid'
+                                        : formik.values.firstname || formik.touched.firstname
+                                            ? 'is-invalid'
+                                            : ''
+                                        }`}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    name="firstname"
+                                    value={formik.values.firstname}
+                                    placeholder="Firstname"
+                                />
                             </div>
                             {/* <div className='text-end text-danger'>
                                         {formik.errors.firstname}
@@ -101,19 +122,45 @@ const Signup = () => {
 
 
                             <div className='w-100'>
-                                <input type="text" name='lastname' value={formik.values.lastname} onChange={formik.handleChange}
+                                {/* <input type="text" name='lastname' value={formik.values.lastname} onChange={formik.handleChange}
                                   className={`form-control my-4 p-3  ${formik.values.lastname && !formik.errors.lastname ? 'is-valid' : (formik.errors.lastname ? 'is-invalid' : '')}`}
-                                    placeholder='Lastname' />
+                                    placeholder='Lastname' /> */}
+
+                                <input type="text"
+                                    className={`form-control w-100 my-4 p-3 ${(formik.values.lastname && !formik.errors.lastname) ||
+                                        (formik.touched.lastname && formik.values.lastname && formik.errors.lastname && formik.touched.lastname && formik.values.lastname)
+                                        ? 'is-valid'
+                                        : formik.values.lastname || formik.touched.lastname
+                                            ? 'is-invalid'
+                                            : ''
+                                        }`}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    name="lastname"
+                                    value={formik.values.lastname}
+                                    placeholder="Lastname"
+                                />
                             </div>
-                           
+
 
 
                             <div className='w-100'>
-                                <input type="text" name='password' value={formik.values.password} onChange={formik.handleChange}
-                                     className={`form-control my-4 p-3 ${formik.values.password && !formik.errors.password ? 'is-valid' : (formik.errors.password ? 'is-invalid' : '')}`}
-                                    placeholder='Password' />
+                                     <input type="text"
+                                    className={`form-control w-100 my-4 p-3 ${(formik.values.password && !formik.errors.password) ||
+                                        (formik.touched.password && formik.values.password && formik.errors.password && formik.touched.password && formik.values.password)
+                                        ? 'is-valid'
+                                        : formik.values.password || formik.touched.password
+                                            ? 'is-invalid'
+                                            : ''
+                                        }`}
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    name="password"
+                                    value={formik.values.password}
+                                    placeholder="Password"
+                                />
                             </div>
-                           
+
                             <div className='my-2 text-center'>
                                 <button className='btn btn-dark' type='submit'>Signup</button>
                             </div>
